@@ -55,15 +55,20 @@ body{
 
 .heading-primary{
     color: #fff;
-    text-transform: uppercase;
+    text-transform: uppercase;  
+    backface-visibility: hidden;
     
-   
 }
 .heading-primary-main{
     display: block;
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    
+    
 }
 
 .heading-primary-sub{
@@ -71,4 +76,121 @@ body{
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+    animation: moveInRight 1s ease-out;
+    margin-bottom: 30px;
+}
+
+@keyframes moveInLeft{
+
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    } 
+
+    80%{
+        transform: translateX(+30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+
+@keyframes moveInRight{
+
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    } 
+
+    80%{
+        transform: translateX(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+
+
+}
+
+.btn:link, .btn:visited{
+
+    text-transform: uppercase;
+    text-decoration: none;   
+    width: 250px;
+    height: 50px;    
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;    
+    padding: 15px 40px;
+    border-radius: 100px;
+    transition: all 0.2s;
+    box-shadow: 0 10px 20px rgba(0, 0,0, 0.2);
+    position: relative;
+   
+}
+
+.btn:hover{
+
+    transform: translateY(-3px);
+}
+.btn:active{
+
+    transform: translateY(-1px);
+    
+}
+.btn__white{
+
+    background-color: #fff;
+    color: #777;
+
+}
+.btn::after{
+    
+    content:"";
+    position: absolute;
+    display: inline-block;
+    border-radius: 100px;
+    top: 0;
+    transition: all 0.4s;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+
+}
+.btn__white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+
+    transform: scale(1.4);
+    opacity: 0;
+    
+}
+
+@keyframes moveUp{
+
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100%{   
+        
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn__animated{
+
+    animation: moveUp 1s ease-out;
+    animation-delay: 0.5s;
+    animation-fill-mode: backwards;
+    backface-visibility: hidden;
+
 }
