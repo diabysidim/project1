@@ -34,3 +34,22 @@ body{
     
     
 }
+
+.heading-secondary{
+
+    font-size: 3.5rem ;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $light-green-color, $dark-green-color);
+    -webkit-background-clip: text;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s;
+    display: inline-block;
+    color: transparent;
+
+
+    &:hover{
+        transform: skewY(2deg)
+    }
+}
+

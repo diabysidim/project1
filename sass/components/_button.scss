@@ -67,3 +67,32 @@
     }
 
 }
+
+.btn-text{
+
+    &:link, &:visited{
+
+        border: none;
+        border-bottom: 1px solid $medium-green-color;
+        text-decoration: none;
+        padding: 0.6rem;
+        color: $medium-green-color;
+        display: inline-block;
+        transition: all 0.2s;
+        text-transform: capitalize;
+    }
+    &:hover{
+
+        background-color: $medium-green-color ;
+        color:$white-color;
+        transform: translateY(-2px);
+        
+        box-shadow: 0 1rem 2rem rgba($color: #000000, $alpha: 0.15);
+        
+    }
+    &:active{
+        transform: translateY(0);
+    }
+
+    
+}
